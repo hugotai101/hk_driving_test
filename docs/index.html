@@ -1,0 +1,92 @@
+<html>
+
+<head>
+    <link rel="icon" href="icon.png">
+    <link rel="stylesheet" href="main.css">
+    <!--javascript -->
+    <script type="text/javascript" src="function.js">
+
+    </script>
+    <!--for jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+        $(function () {
+            $("#1").click(function () {
+                alert(this.checked);
+            })
+        });
+    </script>
+    <!-- set encoding -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+</head>
+<header>
+        <div class="writtentest">
+            <span id="Examname">Driving Test(Written):</span>
+        </div>
+        <div class="timer">
+            <span id="demo">20:00</span>
+        </div>
+</header>
+
+
+<body onload="hideall()">
+    <title>Driving Test</title>
+    <script type='text/javascript'>
+        $(function () {
+            $("#questionbox input[name='selector']").change(
+                function () {
+                    selectedans[question_no - 1] = $('input[name=selector]:checked', '#questionbox').val();
+                    //$(this).prop('checked', false);
+                    //next();
+                });
+        });
+    </script>
+    <!--question -->
+    <div class="wholepage">
+        <div class="startcontrol">
+            <button type="button" id="start" onclick="start(); init(); to20();">reset</button>
+        </div>
+        <div class="mainpaper">
+            <table>
+                <tr>
+                    <td>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label id="qno">1.</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span id="question"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <form id="questionbox">
+                            <input class="questionbox" type="radio" id="1" value="1" name="selector">
+                            <label for="1"></label>
+                            <input class="questionbox" type="radio" id="2" value="2" name="selector">
+                            <label for="2"></label>
+                            <input class="questionbox" type="radio" id="3" value="3" name="selector">
+                            <label for="3"></label>
+                            <input class="questionbox" type="radio" id="4" value="4" name="selector">
+                            <label for="4"></label>
+                        </form>
+                    </td>
+                    <img id="roadsign" src="signs/1.jpg">
+                </tr>
+            </table>
+        </div>
+        <div class="back">
+            <button id="back" type="button" onclick="previous()">Previous</button>
+        </div>
+        <div class="next">
+            <button type="button" id="next" onclick="next()" style="float: right">Next</button>
+        </div>
+    </div>
+</body>
+
+</html>
